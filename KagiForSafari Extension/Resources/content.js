@@ -8,7 +8,7 @@ if (window.location.href.startsWith("https://kagi.com/")) {
 			var lastKagiUrl = value.lastKagiUrl;
 			var searchQuery = getParameterByName("q", lastKagiUrl)
 			if (typeof(privateSessionLink) !== "undefined" && privateSessionLink.startsWith(`https://kagi.com/`)) {
-                if (window.location.toString().includes("q=%s")) {
+                if (privateSessionLink.includes("q=%s")) {
                     window.location.replace(privateSessionLink.replace("%s", searchQuery != null ? searchQuery : ""));
                 } else {
                     window.location.replace(privateSessionLink.concat("&q=", searchQuery != null ? searchQuery : ""));
